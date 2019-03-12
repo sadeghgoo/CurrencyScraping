@@ -3,7 +3,7 @@ import requests
 import json
 import time
 import schedule
-print('hello worls')
+
 class Get_price :
 
     #MARK - Initialize 
