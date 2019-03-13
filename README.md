@@ -8,7 +8,7 @@ This is an script that you can grab data from Specific Currency Website
 ```python
 obj_test = Get_price(['https://www.tgju.org/chart/price_dollar_rl','http://www.tgju.org/chart/geram24'])
 ```
-2)console Print
+2)Console Print
 ```
 unknown:['128,470', '128,550', '128,430', '120', '0.03%', '128,490', '۱۱', '128,470', '0%', '0'] 
  --------------------------------------------
