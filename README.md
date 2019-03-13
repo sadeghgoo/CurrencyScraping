@@ -2,4 +2,8 @@
 
 This is an script that you can grab data from Specific Currency Website
 
-All rights reserved for RayanApple
+# Usage
+
+1) Create Object from Get_price Class
+2) Enter you url in list 
+3) finish
