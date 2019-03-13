@@ -8,7 +8,13 @@ This is an script that you can grab data from Specific Currency Website
 ```python
 obj_test = Get_price(['https://www.tgju.org/chart/price_dollar_rl','http://www.tgju.org/chart/geram24'])
 ```
-2) Console Print
+
+2) Call fetch_price() From Class 
+```python
+obj_test = Get_price(['https://www.tgju.org/chart/price_dollar_rl','http://www.tgju.org/chart/geram24'])
+obj_test.fetch_price()
+```
+3) Console Print
 ```
 unknown:['128,470', '128,550', '128,430', '120', '0.03%', '128,490', '۱۱', '128,470', '0%', '0'] 
  --------------------------------------------
