@@ -3,6 +3,7 @@ import requests
 import json
 import time
 import schedule
+import validators
 
 class Get_price :
 
@@ -37,18 +38,22 @@ class Get_price :
 
     # MARK - SEND REQUEST AND FIND DIV THAT HAVE PRICE 
     def fetch_price(self):
-         
+           
         for url in self.url:
-            page = requests.get(url)
-            soup = BeautifulSoup(page.content,'html.parser')
-            main_panel = soup.find('ul',class_='data-line float-right float-half')
-            all_currency_dolor = main_panel.find_all('li')
-            for currency in all_currency_dolor:
+            if validators.url(url):
+                page = requests.get(url)
+                soup = BeautifulSoup(page.content,'html.parser')
+                main_panel = soup.find('ul',class_='data-line float-right float-half')
+                all_currency_dolor = main_panel.find_all('li')
+                for currency in all_currency_dolor:
 
-                self.arry_price.append(currency.text)
-            self.seperate_dict()
-            
+                    self.arry_price.append(currency.text)
+                self.seperate_dict()
+            else:
+                raise TypeError('you must enter valid URL')
+
+
 # CREATE OBJECT FOR TEST     
-boj_test = Get_price(['http://www.tgju.org/chart/geram18','http://www.tgju.org/chart/price_dollar_rl'])
+boj_test = Get_price(['tgju.org/chart/price_dollar_rl','http://www.tgju.org/chart/geram24'])
 boj_test.fetch_price()
 
