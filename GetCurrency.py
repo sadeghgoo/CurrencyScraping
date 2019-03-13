@@ -8,8 +8,9 @@ import validators
 class Get_price :
 
     # MARK - Initialize 
-    def __init__(self,url:list,name_currency = 'unknown'):
+    def __init__(self,url,name_currency = 'unknown'):
         self.url = url
+
         self.name_currency = name_currency
         self.arry_price = list()
         self.price = list()
@@ -27,7 +28,6 @@ class Get_price :
 
     # MARK - GET ARRAY OF PRICE AND SEPRATING THE STRING WITH ':'
     def seperate_dict(self):
-        #len_array = len(self.arry_price)
         for price in self.arry_price:
             seperator = tuple(price.split(':'))
             self.price.append(seperator[1])
@@ -40,6 +40,7 @@ class Get_price :
     def fetch_price(self):
            
         for url in self.url:
+            # MARK - CHECK VALID URL 
             if validators.url(url):
                 page = requests.get(url)
                 soup = BeautifulSoup(page.content,'html.parser')
@@ -54,6 +55,6 @@ class Get_price :
 
 
 # CREATE OBJECT FOR TEST     
-boj_test = Get_price(['tgju.org/chart/price_dollar_rl','http://www.tgju.org/chart/geram24'])
+boj_test = Get_price(['https://www.tgju.org/chart/price_dollar_rl','http://www.tgju.org/chart/geram24'])
 boj_test.fetch_price()
 
