@@ -17,6 +17,6 @@ unknown:['5,513,000', '5,534,600', '5,442,200', '46,200', '0.11%', '5,442,200', 
 ```
 
 # TODO
-
-- [ ] Set name for currency
+- [x] Complete with OOP
+- [] Set name for currency
 
