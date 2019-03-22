@@ -11,7 +11,7 @@ class Get_price :
     def __init__(self,url,name_currency = 'unknown'):
         self.url = url
 
-        self.name_currency = name_currency
+        self.name_currency = str()
         self.arry_price = list()
         self.price = list()
 
@@ -44,11 +44,13 @@ class Get_price :
             if validators.url(url):
                 page = requests.get(url)
                 soup = BeautifulSoup(page.content,'html.parser')
+                get_title= soup.find('h1',class_='page-title')
+                self.name_currency = get_title.text
                 main_panel = soup.find('ul',class_='data-line float-right float-half')
-                all_currency_dolor = main_panel.find_all('li')
-                for currency in all_currency_dolor:
-
+                all_currency = main_panel.find_all('li')
+                for currency in all_currency:
                     self.arry_price.append(currency.text)
+            
                 self.seperate_dict()
             else:
                 raise TypeError('you must enter valid URL')
