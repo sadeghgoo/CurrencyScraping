@@ -26,5 +26,5 @@ obj_test.fetch_price()
 ```
 # TODO
 - [x] Complete with OOP
-- [ ] Set name for currency
+- [x] Set name for currency
 
