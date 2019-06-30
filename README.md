@@ -4,8 +4,6 @@ This is an script that you can grab data from Specific Currency Website
 
 # Usage
 
-ما head را اضافه کنیم 
-
 1) Create Object from Get_price Class ,Enter list of URl
 ```python
 obj_test = Get_price(['https://www.tgju.org/chart/price_dollar_rl','http://www.tgju.org/chart/geram24'])
